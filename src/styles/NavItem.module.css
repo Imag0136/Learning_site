@@ -1,0 +1,23 @@
+.item {
+    float: left;
+}
+
+.link {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    transition: 300ms;
+}
+
+.link:hover {
+    background-color: #111;
+}
+
+.selected {
+    /*background-color: #04AA6D;*/
+    background-color: red;
+}
+
+.unselected {
+    background-color: blue;
+}
