@@ -8,3 +8,25 @@
     max-width: 1200px;
     margin: 55px auto 0;
 }
+
+.code {
+    padding: 10px 20px;
+    background-color: var(--code);
+    border-radius: 15px;
+    overflow: auto;
+}
+
+code {
+    background-color: var(--code);
+}
+
+button {
+    background-color: var(--primary-base);
+    border-color: var(--primary-base);
+    border-radius: 0.125rem;
+    border-width: 1px;
+    color: var(--primary-invert);
+    font-weight: 600;
+    cursor: pointer;
+    padding: calc(0.375em - 1px)  0.75em;
+}
