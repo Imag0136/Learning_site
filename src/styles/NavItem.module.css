@@ -1,23 +1,19 @@
 .item {
     float: left;
 }
-
 .link {
+    font-weight: 500;
     display: block;
     text-align: center;
     padding: 14px 16px;
     transition: 300ms;
 }
+.link[aria-current="page"]{
+    background-color: var(--primary-base);
+    color: var(--primary-invert);
+}
+
 
 .link:hover {
     background-color: #111;
-}
-
-.selected {
-    /*background-color: #04AA6D;*/
-    background-color: red;
-}
-
-.unselected {
-    background-color: blue;
 }

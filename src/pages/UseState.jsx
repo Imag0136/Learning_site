@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
+import style from "../styles/UseState.module.css"
 
 const UseState = () => {
     const [count, setCount] = useState(0)
@@ -20,60 +21,48 @@ const UseState = () => {
             <p>Возвращает значение с состоянием и функцию для его обновления.</p>
             <p>Во время первоначального рендеринга возвращаемое состояние (<code>state</code>) совпадает со значением,
                 переданным в
-                качестве первого аргумента (initialState).</p>
-            <p>Функция setState используется для обновления состояния. Она принимает новое значение состояния и ставит в
+                качестве первого аргумента (<code>initialState</code>).</p>
+            <p>Функция <code>setState</code> используется для обновления состояния. Она принимает новое значение
+                состояния и ставит в
                 очередь повторный рендер компонента.</p>
-
-            <p>Когда мы изменяем значение какой-то переменной, React не понимает, что в конертном компотненте произошли
-                изменения. Чтобы сообщить об изменениях необходимо использовать хук <code>useState</code></p>
-            <p><strong>Что такое хук?</strong> Хук — это специальная функция, которая позволяет «подцепиться» к
-                возможностям React.
-                Например, хук <code>useState</code> предоставляет функциональным компонентам доступ к состоянию React.
-            </p>
-            <h2>Объявление переменной состояния</h2>
             <div className="code">
-                <pre><code>
-                {`import React, { useState } from 'react';
-
-const Example() {
-// Объявление новой переменной состояния «count»
-const [count, setCount] = useState(0);`}
-            </code></pre>
+                <code> setState(newState); </code>
             </div>
-            <h2>Что делает вызов useState?</h2>
-            <p>Он объявляет «переменную состояния». Мы называли
-                переменную <code>count</code>, но могли
-                дать ей любое имя. Таким образом мы можем «сохранить» некоторые значения между вызовами
-                функции. Обычно переменные «исчезают» при выходе из функции. К переменным состояния это не относится,
-                потому что
-                их сохраняет React.
-            </p>
-            <h2>Какие аргументы передавать useState?</h2>
-            <p>Единственный аргумент <code>useState</code> — это
-                исходное состояние.</p>
-            <h2>Что возвращается из useState?</h2>
-            <p>Вызов <code>useState</code> вернёт пару значений: текущее
-                состояние и функцию, обновляющую состояние.</p>
-            <h2>Что делают квадратные скобки?</h2>
+            <p>Во время последующих повторных рендеров первое значение, возвращаемое <code>useState</code>, всегда будет
+                самым последним состоянием после применения обновлений.</p>
+            <h3>Что делают квадратные скобки?</h3>
             <p>
                 Такой синтаксис в JavaScript называется <a
                 href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2">«деструктуризацией
-                массивов (array destructuring)»</a>. Он означает,
-                что мы создаём две новые переменные, fruit и setFruit. Во fruit будет записано первое значение,
-                вернувшееся из useState, а в setFruit — второе, что равносильно такому коду:
+                массивов (array destructuring)»</a>. Он означает, что мы создаём две новые
+                переменные, <code>state</code> и <code>setState</code>. Во <code>state</code> будет записано первое
+                значение, вернувшееся из <code>useState</code>, а в <code>setState</code> — второе, что равносильно
+                такому коду:
             </p>
-            var fruitStateVariable = useState('банан'); // Возвращает пару значений
-            var fruit = fruitStateVariable[0]; // Извлекаем первое значение
-            var setFruit = fruitStateVariable[1]; // Извлекаем второе значение
-            Когда мы объявляем переменную состояния с помощью функции useState, мы получаем от неё пару, то есть массив
-            из двух элементов. Первый элемент обозначает текущее значение, а второй является функцией, позволяющей
-            менять это значение. Доступ к элементам через [0] и [1] менее ясен, потому что индексы лишены осмысленных
-            имён.
-
-
-            <h1>Счетчик: {count}</h1>
-            <button onClick={increase}>Increase</button>
-            <button onClick={decrease}>Decrease</button>
+            <div className="code">
+                <pre><code>
+                    var stateVariable = useState(initialState); // Возвращает пару значений {`\n`}
+                    var state = stateVariable[0]; // Извлекаем первое значение {`\n`}
+                    var setState = stateVariable[1]; // Извлекаем второе значение {`\n`}
+                </code></pre>
+            </div>
+            <p>Когда мы объявляем переменную состояния с помощью функции <code>useState</code>, мы получаем массив из
+                двух элементов.
+                Первый элемент обозначает текущее значение, а второй является функцией, позволяющей менять это значение.
+                Доступ к элементам через [0] и [1] менее ясен, потому что индексы лишены осмысленных имён.</p>
+            <div className={style.counter}>
+                <h1>Счетчик: {count}</h1>
+                <button onClick={decrease}>Уменьшить</button>
+                <button onClick={increase}>Увеличить</button>
+            </div>
+            <div className="code">
+                <pre><code>
+                    const [count, setCount] = useState(0) {`\n \n`}
+                    &lt;h1&gt;Счетчик: &#123;count&#125;&lt;/h1&gt; {`\n`}
+                    &lt;button&gt; onClick=&#123;() => setCount(count - 1)&#125;>Уменьшить&lt;/button&gt; {`\n`}
+                    &lt;button&gt; onClick=&#123;() => setCount(count + 1)&#125;>Увеличить&lt;/button&gt; {`\n`}
+                </code></pre>
+            </div>
         </div>
     );
 };

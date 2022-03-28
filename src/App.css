@@ -6,11 +6,12 @@
 
 .container {
     max-width: 1200px;
-    margin: 55px auto 0;
+    margin: 55px auto 25px;
 }
 
 .code {
-    padding: 10px 20px;
+    margin: 15px 0;
+    padding: 15px 20px;
     background-color: var(--code);
     border-radius: 15px;
     overflow: auto;
