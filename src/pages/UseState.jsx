@@ -32,9 +32,12 @@ const UseState = () => {
                 самым последним состоянием после применения обновлений.</p>
             <h3>Что делают квадратные скобки?</h3>
             <p>
-                Такой синтаксис в JavaScript называется <a
-                href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2">«деструктуризацией
-                массивов (array destructuring)»</a>. Он означает, что мы создаём две новые
+                Такой синтаксис в OperatorPrecedence называется
+                <a target="_blank"
+                   href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%D0%A0%D0%B0%D0%B7%D0%B1%D0%BE%D1%80_%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D0%BE%D0%B2"
+                >
+                    «деструктуризацией массивов (array destructuring)»
+                </a>. Он означает, что мы создаём две новые
                 переменные, <code>state</code> и <code>setState</code>. Во <code>state</code> будет записано первое
                 значение, вернувшееся из <code>useState</code>, а в <code>setState</code> — второе, что равносильно
                 такому коду:

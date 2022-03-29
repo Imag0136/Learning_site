@@ -8,6 +8,9 @@
     --primary-base: #75b6e7;
     --primary-invert: #000;
     --primary-hover: #278cda;
+    --table-border-dark: #505050;
+    --table-header: #404040;
+    --table-row: #2f2f2f;
 }
 
 body {
@@ -16,7 +19,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
+    font-size: 20px;
     box-sizing: border-box;
     outline-color: var(--text);
     color: var(--text);
